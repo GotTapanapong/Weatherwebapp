@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/cloud.png" type="image/x-icon">
     <title>Weather App</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- ใช้ฟอนต์ Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-chubby/css/uicons-solid-chubby.css'>
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
+
         /* ซ่อน Spinner ไว้ก่อน */
-        #loading-spinner { display: none; }
+        #loading-spinner {
+            display: none;
+        }
+
         /* ซ่อน ที่แสดงผลลัพธ์ไว้ก่อน */
-        #results-container { display: none; }
+        #results-container {
+            display: none;
+        }
     </style>
 </head>
+
 <body class="min-h-screen bg-gradient-to-br from-blue-100 to-indigo-200 flex items-center justify-center p-4">
 
     <!-- Card หลัก -->
-    <div class="bg-white/90 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-xl w-full max-w-lg">
-        
+    <div class="bg-white backdrop-blur-sm p-8 rounded-2xl shadow-xl w-full max-w-6xl mx-auto">
+
         <!-- Header -->
         <div class="flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-indigo-600 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.758A3.75 3.75 0 0013.5 4.5h-4.5a4.5 4.5 0 00-4.5 4.5v3.75m0 0A3.75 3.75 0 013.75 12h16.5m-16.5 3.75a3.75 3.75 0 013.75 1.125m3.75-1.125a3.75 3.75 0 013.75 0m3.75 0a3.75 3.75 0 013.75-1.125m3.75 1.125a3.75 3.75 0 01-3.75 0m3.75 0a3.75 3.75 0 01-3.75 1.125m-3.75-1.125a3.75 3.75 0 01-3.75 0m-3.75 0a3.75 3.75 0 01-3.75-1.125" />
-            </svg>
+            <i class="fi fi-sc-cloud text-2xl mt-2 mr-2 text-sky-300"></i>
             <h1 class="text-3xl font-bold text-gray-800">Weather App</h1>
         </div>
 
         <!-- ช่องค้นหา -->
         <div class="flex flex-col sm:flex-row gap-3 mb-4">
-            <input type="text" id="city-input" placeholder="พิมพ์ชื่อเมือง (เช่น London)" 
-                   class="flex-grow px-4 py-3 rounded-lg border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200">
-            <button id="search-button" 
-                    class="bg-indigo-600 text-white font-bold px-6 py-3 rounded-lg shadow-md hover:bg-indigo-700 active:scale-95 transition duration-200">
+            <input type="text" id="city-input" placeholder="พิมพ์ชื่อเมือง (เช่น London)"
+                class="flex-grow px-4 py-3 rounded-lg border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200">
+            <button id="search-button"
+                class="bg-indigo-600 text-white font-bold px-6 py-3 rounded-lg shadow-md hover:bg-indigo-700 active:scale-95 transition duration-200">
                 ค้นหา
             </button>
         </div>
@@ -57,24 +65,25 @@
         </div>
 
         <!-- ที่แสดงผลลัพธ์ (รวม Current + Forecast) -->
-        <div id="results-container" class="space-y-6">
-            
-            <!-- 1. ผลลัพธ์อากาศปัจจุบัน (Current Weather) -->
-            <div id="weather-results">
+        <div id="results-container" class="flex flex-col lg:flex-row gap-6 mt-4 items-stretch justify-between min-h-[500px]">
+
+            <!-- อากาศปัจจุบัน + รายละเอียด -->
+            <div id="weather-results" class="flex-[2] rounded-2xl p-6 space-y-4 h-full">
                 <!-- ข้อมูลอากาศปัจจุบัน จะถูกใส่โดย app.js -->
             </div>
 
-            <!-- 2. ผลลัพธ์พยากรณ์อากาศล่วงหน้า (Forecast) -->
-            <div id="forecast-container" class="mt-6">
+            <!-- พยากรณ์อากาศ 5 วัน -->
+            <div id="forecast-container" class="flex-[1] rounded-2xl p-6 flex flex-col h-full">
                 <!-- ข้อมูลพยากรณ์ จะถูกใส่โดย app.js -->
             </div>
 
         </div>
-        
+
+
     </div>
 
     <!-- โหลด app.js (ต้องอยู่ล่างสุด) -->
     <script src="app.js"></script>
 </body>
-</html>
 
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "weatherwebapp",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000W\u0000e\u0000a\u0000t\u0000h\u0000e\u0000r\u0000w\u0000e\u0000b\u0000a\u0000p\u0000p\u0000\r\u0000 \u0000",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GotTapanapong/Weatherwebapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GotTapanapong/Weatherwebapp/issues"
+  },
+  "homepage": "https://github.com/GotTapanapong/Weatherwebapp#readme",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2"
+  }
+}
